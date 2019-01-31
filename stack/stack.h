@@ -5,13 +5,13 @@
 #include <string.h>
 
 struct stack_t {
-    void (*push)(struct stack_t*, void*);
-    void* (*pop)(struct stack_t*);
-    void* (*peek)(struct stack_t*);
+    void (*push)(struct stack_t*, const char*);
+    char* (*pop)(struct stack_t*);
+    char* (*peek)(struct stack_t*);
     char *data;
     size_t dsz;
-    int size;
-    int max;
+    size_t size;
+    size_t max;
 };
 
 struct stack_t * make_stack(size_t dsz);
