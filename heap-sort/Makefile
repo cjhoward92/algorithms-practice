@@ -1,5 +1,8 @@
 CC=g++
 CFLAGS=-ggdb
 
-main: main.cc heap.cc
-	$(CC) $(CFLAGS) main.cc heap.cc -o main
+main: main.o
+	$(CC) $(CFLAGS) -o main main.o
+
+main.o: main.cc
+	$(CC) $(CFLAGS) -c main.cc
