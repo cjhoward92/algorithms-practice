@@ -5,10 +5,11 @@
 #include <string.h>
 
 struct stack_t {
-    void (*push)(struct stack_t*, const char*);
-    char* (*pop)(struct stack_t*);
-    char* (*peek)(struct stack_t*);
+    void (*push)(struct stack_t*, const void*);
+    void* (*pop)(struct stack_t*);
+    void* (*peek)(struct stack_t*);
     char *data;
+    void *head;
     size_t dsz;
     size_t size;
     size_t max;
